@@ -1,0 +1,29 @@
+" change mouse mode
+set mouse=a
+
+set runtimepath^=~/.vim/manully-plugged/
+
+" for 'ntpeters/vim-better-whitespace'
+let g:better_whitespace_operator=''
+let g:strip_whitespace_on_save = 1
+map <leader><space> :StripWhitespace<cr>
+
+" enable cscope
+set cst
+set cscopetag
+set csto=0
+set csverb
+set cscopequickfix=s-,c-,d-,i-,t-,e-
+nmap <F3> :cs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <F4> :cs find s <C-R>=expand("<cword>")<CR><CR>
+
+" gtags
+let g:GtagsCscope_Auto_Load = 1
+let g:GtagsCscope_Quiet = 1
+let g:GtagsCscope_No_Auto_Jump = 1
+let g:CtagsCscope_Auto_Map = 0
+let g:Gtags_Auto_Update = 0
+
+
+" enable auto clang-format
+let g:clang_format#auto_format = 0
