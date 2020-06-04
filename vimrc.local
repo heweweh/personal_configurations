@@ -1,7 +1,7 @@
 " change mouse mode
 set mouse=a
 
-set runtimepath^=~/.vim/manully-plugged/
+set runtimepath^=~/.vim/manually-plugged/
 
 " for 'ntpeters/vim-better-whitespace'
 let g:better_whitespace_operator=''
