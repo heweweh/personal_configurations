@@ -120,18 +120,24 @@ Plug 'JuliaEditorSupport/julia-vim'
 Plug 'christoomey/vim-system-copy'
 Plug 'will133/vim-dirdiff'
 Plug 'jremmen/vim-ripgrep'
+Plug 'tpope/vim-unimpaired'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'skywind3000/gutentags_plus'
 
 
 call plug#end()
+
+" 鼠标兼容模式
+set mouse=a
+
+" 手动插件路径
+set runtimepath^=~/.vim/manually-plugged/
 
 " load vim default plugin
 runtime macros/matchit.vim
 
 " 编辑vimrc文件
 nnoremap <leader>ev :edit $MYVIMRC<cr>
-
-" 查看vimplus的help文件
-nnoremap <leader>h :edit ~/.vimplus/help.md<cr>
 
 " 打开当前光标所在单词的vim帮助文档
 nnoremap <leader>H :execute ":help " . expand("<cword>")<cr>
@@ -200,39 +206,10 @@ let g:NERDTreeHighlightFoldersFullName = 1
 let g:NERDTreeDirArrowExpandable='▷'
 let g:NERDTreeDirArrowCollapsible='▼'
 
-" YCM
-" let g:ycm_confirm_extra_conf = 0
-" let g:ycm_error_symbol = '>>'
-" let g:ycm_warning_symbol = '>*'
-" let g:ycm_seed_identifiers_with_syntax = 1
-" let g:ycm_complete_in_comments = 1
-" let g:ycm_complete_in_strings = 1
-" nnoremap <leader>u :YcmCompleter GoToDeclaration<cr>
-" " 已经使用cpp-mode插件提供的转到函数实现的功能
-" " nnoremap <leader>i :YcmCompleter GoToDefinition<cr>
-" nnoremap <leader>o :YcmCompleter GoToInclude<cr>
-" nnoremap <leader>ff :YcmCompleter FixIt<cr>
-" nmap <F8> :YcmDiags<cr>
-
 " ctags
-set tags+=/usr/include/tags
-set tags+=~/.vim/systags
-set tags+=~/.vim/x86_64-linux-gnu-systags
-let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_semantic_triggers =  {
-  \   'c' : ['->', '.','re![_a-zA-z0-9]'],
-  \   'objc' : ['->', '.', 're!\[[_a-zA-Z]+\w*\s', 're!^\s*[^\W\d]\w*\s',
-  \             're!\[.*\]\s'],
-  \   'ocaml' : ['.', '#'],
-  \   'cpp,objcpp' : ['->', '.', '::','re![_a-zA-Z0-9]'],
-  \   'perl' : ['->'],
-  \   'php' : ['->', '::'],
-  \   'cs,java,javascript,typescript,d,python,perl6,scala,vb,elixir,go' : ['.'],
-  \   'ruby' : ['.', '::'],
-  \   'lua' : ['.', ':'],
-  \   'erlang' : [':'],
-  \ }
-let g:ycm_semantic_triggers.c = ['->', '.', ' ', '(', '[', '&',']']
+" set tags+=/usr/include/tags
+" set tags+=~/.vim/systags
+" set tags+=~/.vim/x86_64-linux-gnu-systags
 
 " tagbar
 let g:tagbar_width = 30
@@ -308,7 +285,41 @@ nnoremap <leader>g :GV<cr>
 nnoremap <leader>G :GV!<cr>
 nnoremap <leader>gg :GV?<cr>
 
-" 个性化
-if filereadable(expand($HOME . '/.vimrc.local'))
-    source $HOME/.vimrc.local
-endif
+
+" for 'ntpeters/vim-better-whitespace'
+let g:better_whitespace_operator=''
+let g:strip_whitespace_on_save = 1
+map <leader><space> :StripWhitespace<cr>
+
+" enable auto clang-format
+let g:clang_format#auto_format = 0
+
+" gtags
+let g:GtagsCscope_Auto_Load = 0
+let g:GtagsCscope_Quiet = 1
+let g:GtagsCscope_No_Auto_Jump = 1
+let g:GtagsCscope_Auto_Map = 0
+let g:Gtags_Auto_Update = 0
+
+" force global use 'ctags' during tag generation
+" let $GTAGSLABEL='ctags'
+
+" enable cscope
+set cst
+set cscopetag
+set csto=0
+set csverb
+set cscopequickfix=s-,c-,d-,i-,t-,e-
+
+" enable gtags module
+let g:gutentags_project_root = ['.project_root']
+let g:gutentags_add_default_project_roots = 0
+let g:gutentags_add_ctrlp_root_markers = 0
+let g:gutentags_modules = ['gtags_cscope']
+let g:gutentags_auto_add_gtags_cscope = 0
+let g:gutentags_cache_dir = expand('~/.cache/tags')
+let g:gutentags_plus_switch = 1
+let g:gutentags_define_advanced_commands = 1
+
+" nmap <F3> :cs find g <C-R>=expand("<cword>")<CR><CR>
+" nmap <F4> :cs find s <C-R>=expand("<cword>")<CR><CR>
