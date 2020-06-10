@@ -321,5 +321,5 @@ let g:gutentags_cache_dir = expand('~/.cache/tags')
 let g:gutentags_plus_switch = 1
 let g:gutentags_define_advanced_commands = 1
 
-" nmap <F3> :cs find g <C-R>=expand("<cword>")<CR><CR>
-" nmap <F4> :cs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <F3> :GscopeFind g <C-R>=expand("<cword>")<CR><CR>
+nmap <F4> :GscopeFind s <C-R>=expand("<cword>")<CR><CR>

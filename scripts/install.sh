@@ -8,26 +8,27 @@ cd ~/.vim/autoload
 ln -s ../vim-plug/plug.vim
 
 # install exuberant-ctags
+echo "installing exuberant-ctags ..."
 sudo apt install exuberant-ctags
 
 # download global
 cd ~/.vim
-crl https://www.tamacom.com/global/global-6.6.4.tar.gz | tar xzv
+curl https://www.tamacom.com/global/global-6.6.4.tar.gz | tar xzv
 cd ~/.vim/global-6.6.4
 ./configure
 make
 echo "installing GNU Global ..."
 sudo make install
+
 mkdir -p ~/.vim/manually-plugged/plugin
 cd ~/.vim/manually-plugged/plugin
 ln -s ~/.vim/global-6.6.4/gtags.vim
 ln -s ~/.vim/global-6.6.4/gtags-cscope.vim
-ln -s ~/.vim/global-6.6.4/gtags.conf .globalrc
 
 # softlink for configuration files
 cd ~/
 ln -s ~/.vim/vim/vimrc .vimrc
-ln -s ~/.vim/vim/vimrc.local .vimrc.local
+ln -s ~/.vim/global-6.6.4/gtags.conf .globalrc
 ln -s ~/.vim/vim/scripts/gtags-project-init
 
 # echo
