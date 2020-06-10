@@ -1,4 +1,3 @@
---gtagslabel=ctags
 --accept-dotfiles
 --skip-unreadable
 --skip-symlink
