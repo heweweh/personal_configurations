@@ -312,7 +312,7 @@ set csverb
 set cscopequickfix=s-,c-,d-,i-,t-,e-
 
 " enable gtags module
-let g:gutentags_project_root = ['.project_root']
+let g:gutentags_project_root = ['.gutgtags']
 let g:gutentags_add_default_project_roots = 0
 let g:gutentags_add_ctrlp_root_markers = 0
 let g:gutentags_modules = ['gtags_cscope']
