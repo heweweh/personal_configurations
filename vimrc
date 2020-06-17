@@ -123,6 +123,7 @@ Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-unimpaired'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'skywind3000/gutentags_plus'
+Plug 'skywind3000/vim-preview'
 
 
 call plug#end()
@@ -324,3 +325,6 @@ let g:gutentags_define_advanced_commands = 1
 nmap <F2> :GscopeFind<space>
 nmap <F3> :GscopeFind g <C-R>=expand("<cword>")<CR><CR>
 nmap <F4> :GscopeFind s <C-R>=expand("<cword>")<CR><CR>
+
+autocmd FileType qf nnoremap <silent><buffer> p :PreviewQuickfix<cr>
+autocmd FileType qf nnoremap <silent><buffer> P :PreviewClose<cr>
