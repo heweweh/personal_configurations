@@ -326,5 +326,10 @@ nmap <F2> :GscopeFind<space>
 nmap <F3> :GscopeFind g <C-R>=expand("<cword>")<CR><CR>
 nmap <F4> :GscopeFind s <C-R>=expand("<cword>")<CR><CR>
 
+" for vim-preview
 autocmd FileType qf nnoremap <silent><buffer> p :PreviewQuickfix<cr>
 autocmd FileType qf nnoremap <silent><buffer> P :PreviewClose<cr>
+noremap <c-u> :PreviewScroll -1<cr>
+noremap <c-d> :PreviewScroll +1<cr>
+inoremap <c-u> <c-\><c-o>:PreviewScroll -1<cr>
+inoremap <c-d> <c-\><c-o>:PreviewScroll +1<cr>
