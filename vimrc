@@ -204,8 +204,8 @@ let g:NERDTreeExactMatchHighlightFullName = 1
 let g:NERDTreePatternMatchHighlightFullName = 1
 let g:NERDTreeHighlightFolders = 1
 let g:NERDTreeHighlightFoldersFullName = 1
-let g:NERDTreeDirArrowExpandable='▷'
-let g:NERDTreeDirArrowCollapsible='▼'
+let g:NERDTreeDirArrowExpandable='>'
+let g:NERDTreeDirArrowCollapsible='^'
 
 " ctags
 " set tags+=/usr/include/tags
@@ -245,20 +245,20 @@ let g:pydiction_menu_height=10
 
 " nerdtree-git-plugin
 let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "✹",
-    \ "Staged"    : "✚",
-    \ "Untracked" : "✭",
-    \ "Renamed"   : "➜",
-    \ "Unmerged"  : "═",
-    \ "Deleted"   : "✖",
-    \ "Dirty"     : "✗",
-    \ "Clean"     : "✔︎",
-    \ 'Ignored'   : '☒',
-    \ "Unknown"   : "?"
+    \ 'Modified'  : "*",
+    \ 'Staged'    : "+",
+    \ 'Untracked' : "$",
+    \ 'Renamed'   : "%",
+    \ 'Unmerged'  : "=",
+    \ 'Deleted'   : "x",
+    \ 'Dirty'     : "!",
+    \ 'Clean'     : "o",
+    \ 'Ignored'   : "~",
+    \ 'Unknown'   : "?"
     \ }
 
 " LeaderF
-nnoremap <leader>f :LeaderfFile ~<cr>
+nnoremap <leader>f :LeaderfFile<cr>
 let g:Lf_WildIgnore = {
             \ 'dir': ['.svn','.git','.hg','.vscode','.wine','.deepinwine','.oh-my-zsh'],
             \ 'file': ['*.sw?','~$*','*.bak','*.exe','*.o','*.so','*.py[co]']
