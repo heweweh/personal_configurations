@@ -124,6 +124,8 @@ Plug 'tpope/vim-unimpaired'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'skywind3000/gutentags_plus'
 Plug 'skywind3000/vim-preview'
+Plug 'inkarkat/vim-ingo-library'
+Plug 'inkarkat/vim-mark'
 
 
 call plug#end()
@@ -333,3 +335,7 @@ noremap <c-u> :PreviewScroll -1<cr>
 noremap <c-d> :PreviewScroll +1<cr>
 inoremap <c-u> <c-\><c-o>:PreviewScroll -1<cr>
 inoremap <c-d> <c-\><c-o>:PreviewScroll +1<cr>
+
+" for vim-mark
+let g:mw_no_mappings = 1
+
