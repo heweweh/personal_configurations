@@ -338,4 +338,7 @@ inoremap <c-d> <c-\><c-o>:PreviewScroll +1<cr>
 
 " for vim-mark
 let g:mw_no_mappings = 1
-
+nmap <Leader>m <Plug>MarkSet
+nmap <Leader>M <Plug>MarkClear
+nmap <Leader>n <Plug>MarkSearchAnyNext
+nmap <Leader>N <Plug>MarkSearchAnyPrev
