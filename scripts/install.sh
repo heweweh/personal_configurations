@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# make sure vim is up-to-date
+sudo add-apt-repository ppa:jonathonf/vim
+sudo apt update
+sudo apt install vim
+
 # donwload plug
 cd ~/.vim
 mkdir -p ~/.vim/autoload
@@ -8,8 +13,8 @@ cd ~/.vim/autoload
 ln -s ../vim-plug/plug.vim
 
 # install exuberant-ctags
-echo "installing exuberant-ctags ..."
-sudo apt install exuberant-ctags
+echo "installing exuberant-ctags,curl ..."
+sudo apt install exuberant-ctags curl
 
 # download global
 cd ~/.vim
