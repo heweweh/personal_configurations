@@ -39,6 +39,10 @@ set nofoldenable         " 禁用折叠代码
 " 代码补全
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set wildmenu             " vim自身命名行模式智能补全
+set completeopt+=menu
+set completeopt+=menuone
+set completeopt+=noinsert
+set completeopt-=longest
 set completeopt-=preview " 补全时不显示窗口，只显示补全列表
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -81,11 +85,9 @@ Plug 'easymotion/vim-easymotion'
 Plug 'haya14busa/incsearch.vim'
 Plug 'iamcco/mathjax-support-for-mkdp'
 Plug 'iamcco/markdown-preview.vim'
-Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'rkulla/pydiction'
 Plug 'godlygeek/tabular'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
@@ -149,12 +151,6 @@ nnoremap <leader>H :execute ":help " . expand("<cword>")<cr>
 nnoremap <leader><leader>i :PlugInstall<cr>
 nnoremap <leader><leader>u :PlugUpdate<cr>
 nnoremap <leader><leader>c :PlugClean<cr>
-
-" 分屏窗口移动
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>l
 
 " 打开文件自动定位到最后编辑的位置
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | execute "normal! g'\"" | endif
@@ -240,10 +236,6 @@ endif
 let g:EasyMotion_smartcase = 1
 map <leader>w <Plug>(easymotion-bd-w)
 nmap <leader>w <Plug>(easymotion-overwin-w)
-
-" pydiction
-let g:pydiction_location='~/.vim/plugged/pydiction/complete-dict'
-let g:pydiction_menu_height=10
 
 " nerdtree-git-plugin
 let g:NERDTreeGitStatusIndicatorMapCustom = {
@@ -342,3 +334,6 @@ nmap <Leader>m <Plug>MarkSet
 nmap <Leader>M <Plug>MarkClear
 nmap <Leader>n <Plug>MarkSearchAnyNext
 nmap <Leader>N <Plug>MarkSearchAnyPrev
+
+" for kite
+let g:kite_auto_complete=0
