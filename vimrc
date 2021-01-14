@@ -252,7 +252,10 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ }
 
 " LeaderF
-nnoremap <leader>f :LeaderfFile<cr>
+nnoremap <leader>ff :LeaderfFile<cr>
+nnoremap <leader>fm :LeaderfMru<cr>
+nnoremap <leader>fb :LeaderfBuffer<cr>
+nnoremap <leader>fl :LeaderfLine<cr>
 let g:Lf_WildIgnore = {
             \ 'dir': ['.svn','.git','.hg','.vscode','.wine','.deepinwine','.oh-my-zsh'],
             \ 'file': ['*.sw?','~$*','*.bak','*.exe','*.o','*.so','*.py[co]']
