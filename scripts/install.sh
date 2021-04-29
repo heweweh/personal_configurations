@@ -30,6 +30,10 @@ cd ~/.vim/manually-plugged/plugin
 ln -s ~/.vim/global-6.6.4/gtags.vim
 ln -s ~/.vim/global-6.6.4/gtags-cscope.vim
 
+echo "installing fonts ..."
+sudo cp ~/.vim/vim/fonts/*.*tf /usr/share/fonts
+fc-cache
+
 # softlink for configuration files
 cd ~/
 ln -s ~/.vim/vim/vimrc .vimrc
@@ -37,6 +41,6 @@ ln -s ~/.vim/global-6.6.4/gtags.conf .globalrc
 ln -s ~/.vim/vim/scripts/gtags-project-init
 
 # echo
-echo "NOTE: You can manully install fonts in vim/fonts/ if needed."
+echo "NOTE: You can manully select fonts in preferences of your terminal."
 
 #done
