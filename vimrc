@@ -261,7 +261,7 @@ let g:Lf_WindowPosition = 'bottom'
 let g:Lf_PreviewInPopup = 1
 let g:Lf_ShortcutF = "<leader>ff"
 noremap <leader>fb :<C-U><C-R>=printf("Leaderf buffer %s --popup", "")<CR><CR>
-noremap <leader>fm :<C-U><C-R>=printf("Leaderf mru %s --popup")), "")<CR><CR>
+noremap <leader>fm :<C-U><C-R>=printf("Leaderf mru %s --popup", "")<CR><CR>
 noremap <leader>ft :<C-U><C-R>=printf("Leaderf bufTag %s --popup", "")<CR><CR>
 noremap <leader>fl :<C-U><C-R>=printf("Leaderf line %s --popup", "")<CR><CR>
 
