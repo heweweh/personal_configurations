@@ -1,9 +1,8 @@
 #!/bin/bash
 
-# make sure vim is up-to-date
-sudo add-apt-repository ppa:jonathonf/vim
-sudo apt update
-sudo apt install vim
+# make sure nvim is up-to-date
+sudo snap install nvim
+
 
 # donwload plug
 cd ~/.vim
@@ -18,8 +17,8 @@ sudo apt install exuberant-ctags curl
 
 # download global
 cd ~/.vim
-curl https://www.tamacom.com/global/global-6.6.4.tar.gz | tar xzv
-cd ~/.vim/global-6.6.4
+curl https://www.tamacom.com/global/global-6.6.6.tar.gz | tar xzv
+cd ~/.vim/global-6.6.6
 ./configure
 make
 echo "installing GNU Global ..."
