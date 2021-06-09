@@ -1,8 +1,9 @@
 #!/bin/bash
 
 # make sure nvim is up-to-date
-sudo snap install nvim --classic
-
+sudo add-apt-repository ppa:neovim-ppa/stable
+sudo apt update
+sudo apt install neovim exuberant-ctags curl
 
 # donwload plug
 cd ~/.vim
@@ -10,10 +11,6 @@ mkdir -p ~/.vim/autoload
 git clone https://github.com/junegunn/vim-plug.git
 cd ~/.vim/autoload
 ln -s ../vim-plug/plug.vim
-
-# install exuberant-ctags
-echo "installing exuberant-ctags,curl ..."
-sudo apt install exuberant-ctags curl
 
 # download global
 cd ~/.vim
