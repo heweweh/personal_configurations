@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # make sure nvim is up-to-date
-sudo snap install nvim
+sudo snap install nvim --classic
 
 
 # donwload plug
