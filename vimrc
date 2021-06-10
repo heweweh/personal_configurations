@@ -275,6 +275,7 @@ noremap go :<C-U>Leaderf! rg --recall<CR>
 let g:Lf_GtagsAutoGenerate = 0
 let g:Lf_Gtagslabel = 'native-pygments'
 let g:Lf_GtagsSkipUnreadable = 1
+let g:Lf_RootMarkers = ['.rootmarker'] " escape default rootmarker
 nmap <F2> :<C-U><C-R>=printf("Leaderf! gtags -%s", "")<CR>
 nmap <F3> :<C-U><C-R>=printf("Leaderf! gtags -d %s --auto-jump", expand("<cword>"))<CR><CR>
 nmap <F4> :<C-U><C-R>=printf("Leaderf! gtags -r %s --auto-jump", expand("<cword>"))<CR><CR>
