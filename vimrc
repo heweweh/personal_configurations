@@ -258,6 +258,7 @@ let g:Lf_WildIgnore = {
             \}
 let g:Lf_UseCache = 1
 let g:Lf_WindowPosition = 'bottom'
+let g:Lf_WindowHeight = 0.30
 let g:Lf_PreviewInPopup = 1
 let g:Lf_ShortcutF = "<leader>ff"
 noremap <leader>fb :<C-U><C-R>=printf("Leaderf buffer %s --popup", "")<CR><CR>
