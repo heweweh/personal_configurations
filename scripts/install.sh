@@ -20,10 +20,10 @@ ln -sv ../vim-plug/plug.vim
 # softlink for configuration files
 cd ~/
 rm .vimrc
-ln -sv .vim/vim/vimrc .vimrc
+ln -sv ~/.vim/vim/vimrc .vimrc
 rm .vim/init.vim
-ln -sv .vim/vim/vimrc .vim/init.vim
+ln -sv ~/.vim/vim/vimrc .vim/init.vim
 rm .config/nvim # only if it's a soft link
-ln -sv .vim .config/nvim
+ln -sv ~/.vim .config/nvim
 
 #done
