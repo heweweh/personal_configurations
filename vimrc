@@ -272,8 +272,8 @@ noremap <C-F> :<C-U><C-R>=printf("Leaderf! rg -e %s", expand("<cword>"))<CR>
 xnoremap gf :<C-U><C-R>=printf("Leaderf! rg -F -e %s", leaderf#Rg#visual())<CR>
 noremap go :<C-U>Leaderf! rg --recall<CR>
 
-" should use `Leaderf gtags --update` first
-let g:Lf_GtagsAutoGenerate = 0
+" should use `Leaderf gtags --update` first if AutoGenerate is not 1
+let g:Lf_GtagsAutoGenerate = 1
 let g:Lf_Gtagslabel = 'native-pygments'
 let g:Lf_GtagsSkipUnreadable = 1
 let g:Lf_RootMarkers = ['.rootmarker'] " escape default rootmarker
