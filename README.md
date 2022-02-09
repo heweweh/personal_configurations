@@ -12,8 +12,3 @@
 https://github.com/junegunn/vim-plug
 ```
 
-### 下载最新GNU Global工具
-```
-http://www.gnu.org/software/global/download.html
-```
-
