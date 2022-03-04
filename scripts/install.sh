@@ -18,8 +18,9 @@ rm plug.vim
 ln -sv ../vim-plug/plug.vim
 
 # softlink for configuration files
-cd ~/
-rm .vimrc
-ln -sv ~/.vim/vim/vimrc .vimrc
+rm ~/.vimrc
+ln -sv ~/.vim/vim/vimrc ~/.vimrc
+mkdir ~/.config/nvim/
+ln -sv ~/.vim/vim/init.vim ~/.config/nvim/init.vim
 
 #done
