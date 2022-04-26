@@ -83,8 +83,7 @@ Plug 'chxuan/tagbar'
 Plug 'Yggdroot/LeaderF'
 Plug 'easymotion/vim-easymotion'
 Plug 'haya14busa/incsearch.vim'
-Plug 'iamcco/mathjax-support-for-mkdp'
-Plug 'iamcco/markdown-preview.vim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': ':call mkdp#util#install()', 'for': 'markdown' }
 Plug 'scrooloose/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -221,16 +220,8 @@ map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 
 " markdown
-let uname = system('uname -s')
-if uname == "Darwin\n"
-    let g:mkdp_path_to_chrome = "/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome"
-else
-    let g:mkdp_path_to_chrome = '/usr/bin/google-chrome-stable %U'
-endif
-" nmap <silent> <F7> <Plug>MarkdownPreview
-" imap <silent> <F7> <Plug>MarkdownPreview
-" nmap <silent> <F8> <Plug>StopMarkdownPreview
-" imap <silent> <F8> <Plug>StopMarkdownPreview
+nmap <silent> <F8> <Plug>MarkdownPreviewToggle
+imap <silent> <F8> <Plug>MarkdownPreviewToggle
 
 " vim-easymotion
 let g:EasyMotion_smartcase = 1
