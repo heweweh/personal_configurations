@@ -28,9 +28,9 @@ set cinoptions=g0,:0,N-s,(0    " 设置C/C++语言的具体缩进方式
 set smartindent          " 智能的选择对其方式
 filetype indent on       " 自适应不同语言的智能缩进
 set expandtab            " 将制表符扩展为空格
-set tabstop=4            " 设置编辑时制表符占用空格数
-set shiftwidth=4         " 设置格式化时制表符占用空格数
-set softtabstop=4        " 设置2个空格为制表符
+set tabstop=2            " 设置编辑时制表符占用空格数
+set shiftwidth=2         " 设置格式化时制表符占用空格数
+set softtabstop=2        " 设置2个空格为制表符
 set nowrap               " 禁止折行
 set sidescroll=10        " 设置向右滚动字符数
 set nofoldenable         " 禁用折叠代码
