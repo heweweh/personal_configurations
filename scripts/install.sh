@@ -1,4 +1,5 @@
 #!/bin/bash
+CONFIGURATION_PATH=$(pwd)
 
 # make sure nvim is up-to-date
 sudo add-apt-repository ppa:neovim-ppa/stable
@@ -6,7 +7,7 @@ sudo add-apt-repository ppa:dns/gnu
 sudo apt install neovim global exuberant-ctags curl
 
 echo "installing fonts ..."
-sudo cp ~/.vim/vim/fonts/*.*tf /usr/share/fonts
+sudo cp ${CONFIGURATION_PATH}/fonts/*.*tf /usr/share/fonts
 fc-cache
 
 # donwload plug
@@ -19,8 +20,8 @@ ln -sv ../vim-plug/plug.vim
 
 # softlink for configuration files
 rm ~/.vimrc
-ln -sv ~/.vim/vim/vimrc ~/.vimrc
+ln -sv ${CONFIGURATION_PATH}/vimrc ~/.vimrc
 mkdir -p ~/.config/nvim/
-ln -sv ~/.vim/vim/init.vim ~/.config/nvim/init.vim
-
+ln -sv ${CONFIGURATION_PATH}/init.vim ~/.config/nvim/init.vim
+echo "source ${CONFIGURATION_PATH}/tmux.conf" >> ~/.tmux.conf
 #done
