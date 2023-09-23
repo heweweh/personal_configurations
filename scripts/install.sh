@@ -2,7 +2,6 @@
 CONFIGURATION_PATH=$(pwd)
 
 # make sure nvim is up-to-date
-sudo add-apt-repository ppa:neovim-ppa/stable
 sudo add-apt-repository ppa:dns/gnu
 sudo apt install neovim global exuberant-ctags curl
 
