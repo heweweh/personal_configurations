@@ -9,13 +9,17 @@ echo "installing fonts ..."
 sudo cp ${CONFIGURATION_PATH}/fonts/*.*tf /usr/share/fonts
 fc-cache
 
-# donwload plug
+# download plug
 mkdir -p ~/.vim/autoload
 cd ~/.vim
 git clone https://github.com/junegunn/vim-plug.git
 cd ~/.vim/autoload
 rm plug.vim
 ln -sv ../vim-plug/plug.vim
+
+# download tpm
+mkdir -p ~/.tmux/plugins
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # softlink for configuration files
 rm ~/.vimrc
